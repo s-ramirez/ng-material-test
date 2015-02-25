@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('materialTest', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'ngMaterial'])
-	.config(function ($routeProvider) {
+	.config(function ($routeProvider, $mdThemingProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'app/main/main.html',
@@ -14,4 +14,8 @@ angular.module('materialTest', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize
 			.otherwise({
 				redirectTo: '/'
 			});
+
+      $mdThemingProvider.theme('default')
+        .primaryPalette('teal')
+        .accentPalette('light-green');
 	});
